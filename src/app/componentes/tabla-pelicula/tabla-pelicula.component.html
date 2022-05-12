@@ -1,0 +1,18 @@
+<table class="table">
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Tipo</th>
+    <th>Fecha de estreno</th>
+    <th>Público</th>
+    <th>Foto</th>
+    <tbody>
+        <tr *ngFor="let pelicula of listadoPeliculasTabla" (click)="enviarId(pelicula.id)">
+            <td>{{ pelicula.id }}</td>
+            <td>{{ pelicula.nombre }}</td>
+            <td>{{ pelicula.tipo }}</td>
+            <td>{{ pelicula.fechaEstreno }}</td>
+            <td>{{ pelicula.cantidadPublico }}</td>
+            <td><img [src]="pelicula.fotoPelicula" alt="foto-{{ pelicula.id }}" height="75"></td>
+        </tr>
+    </tbody>
+</table>
