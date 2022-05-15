@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,11 @@ import { PeliculaListadoComponent } from './componentes/pelicula-listado/pelicul
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
     BienvenidoComponent,
     TablaPeliculaComponent,
     NotFoundComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    TablaPaisesComponent,
+    MenuComponent,
+    TablaActorComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,137 @@
-<p>pelicula-alta works!</p>
+<div class="container">
+    <app-menu></app-menu>
+
+    <div class="mt-5 py-5 text-center">
+        <img class="d-block mx-auto mb-4"
+            src="https://w7.pngwing.com/pngs/150/272/png-transparent-graphic-film-movie-icons-cinema-clapperboard-others-miscellaneous-angle-text.png"
+            alt="" width="72" height="72">
+        <h2>Alta Películas</h2>
+    </div>
+
+    <div class="row">
+        <!-- <div class="col-md-4 order-md-2 mb-4">
+            <app-tabla-paises (paisSeleccionadoEvent)="llenarCampoActor($event)"></app-tabla-paises>
+        </div> -->
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Película</h4>
+            <form [formGroup]="forma" class="needs-validation" (ngSubmit)="guardarPelicula()">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="" value="" required
+                            formControlName="nombre">
+                        <small class="invalid"
+                            *ngIf="forma.controls['nombre'].errors?.['required'] && forma.controls['nombre'].touched">
+                            El nombre es requerido.
+                        </small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="fechaEstreno">Fecha de estreno</label>
+                        <input type="text" class="form-control" id="fechaEstreno" placeholder="" value="" required
+                            formControlName="fechaEstreno">
+                        <small class="invalid"
+                            *ngIf="forma.controls['fechaEstreno'].errors?.['required'] && forma.controls['fechaEstreno'].touched">
+                            La fecha de estreno es requerida.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="d-block my-3">
+                    <label for="tipo">Tipo</label>
+                    <div class="custom-control custom-radio">
+                        <input id="terror" formControlName="tipo" name="tipo" type="radio" class="custom-control-input"
+                            value="Terror" checked required>
+                        <label class="custom-control-label" for="terror">Terror</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="comedia" formControlName="tipo" name="tipo" type="radio" class="custom-control-input"
+                            value="Comedia" required>
+                        <label class="custom-control-label" for="comedia">Comedia</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="amor" formControlName="tipo" name="tipo" type="radio" class="custom-control-input"
+                            value="Amor" required>
+                        <label class="custom-control-label" for="amor">Amor</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="otros" formControlName="tipo" name="tipo" type="radio" class="custom-control-input"
+                            value="Otros" required>
+                        <label class="custom-control-label" for="otros">Otros</label>
+                    </div>
+                    <small class="invalid"
+                        *ngIf="forma.controls['tipo'].errors?.['required'] && forma.controls['tipo'].touched">
+                        El tipo es requerido.
+                    </small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="publico">Público</label>
+                    <input type="number" class="form-control" id="publico" required formControlName="publico">
+                    <small class="invalid"
+                        *ngIf="forma.controls['publico'].errors?.['required'] && forma.controls['publico'].touched">
+                        El publico es requerido.
+                    </small>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="costo">Costo</label>
+                        <input type="number" class="form-control" id="costo" placeholder="" value="" required
+                            formControlName="costo">
+                        <small class="invalid"
+                            *ngIf="forma.controls['costo'].errors?.['required'] && forma.controls['costo'].touched">
+                            El costo es requerido.
+                        </small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="recaudacion">Recaudación</label>
+                        <input type="number" class="form-control" id="recaudacion" placeholder="" value="" required
+                            formControlName="recaudacion">
+                        <small class="invalid"
+                            *ngIf="forma.controls['recaudacion'].errors?.['required'] && forma.controls['recaudacion'].touched">
+                            La recaudacion es requerida.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="descripcion" class="form-control" id="descripcion" formControlName="descripcion"
+                        rows="10" cols="50"></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="actor">Actor</label>
+                        <div class="d-flex justify-content-between">
+                            <input type="text" class="form-control" id="actor" required formControlName="actor"
+                                [value]="actorSeleccionado != undefined ? actorSeleccionado.name.common : ''">
+                        </div>
+                        <small class="invalid"
+                            *ngIf="forma.controls['actor'].errors?.['required'] && forma.controls['actor'].touched">
+                            El actor es requerido.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="foto">Foto</label>
+                    <input type="file" class="form-control" id="foto" name="foto" formControlName="foto"
+                        accept="image/png, image/jpeg" required>
+                    <small class="invalid"
+                        *ngIf="forma.controls['foto'].errors?.['required'] && forma.controls['foto'].touched">
+                        La foto es requerida.
+                    </small>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit"
+                    [disabled]="forma.invalid">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022 Lucas Martin Mascheroni</p>
+    </footer>
+</div>

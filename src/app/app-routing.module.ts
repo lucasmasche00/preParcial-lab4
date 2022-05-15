@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
   { path: 'bienvenido', component:BienvenidoComponent },
   { path: 'busqueda', component:BusquedaComponent},
-  { path: 'peliculas', component:PeliculaAltaComponent},
+  { path: 'alta-peliculas', component:PeliculaAltaComponent},
+  { path: 'alta-actores', component:ActorAltaComponent},
   { path: '**', component:NotFoundComponent}
 ];
 

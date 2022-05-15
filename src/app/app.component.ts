@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simulacro-primer-parcial';
+  title = 'Lucas Martín Mascheroni - Simulacro de parcial';
 }

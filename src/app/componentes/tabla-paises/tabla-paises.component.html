@@ -1,0 +1,11 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Lista de paises</span>
+</h4>
+<ul class="list-group mb-3" id="listaDePaises">
+    <li *ngFor="let pais of listaPaises" class="list-group-item d-flex justify-content-between lh-condensed" (click)="enviarPais($event, pais)">
+        <div>
+            <h6 class="my-0">{{ pais.name.common }}</h6>
+        </div>
+        <img [src]="pais.flags.svg" [alt]="pais.name.common + '-bandera'" width="50">
+    </li>
+</ul>

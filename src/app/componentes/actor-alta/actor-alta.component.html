@@ -1,1 +1,110 @@
-<p>actor-alta works!</p>
+<div class="container">
+    <app-menu></app-menu>
+
+    <div class="mt-5 py-5 text-center">
+        <img class="d-block mx-auto mb-4"
+            src="data:image/png;base64,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"
+            alt="" width="72" height="72">
+        <h2>Alta Actores</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <app-tabla-paises (paisSeleccionadoEvent)="llenarCampoPais($event)"></app-tabla-paises>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Actor</h4>
+            <form [formGroup]="forma" class="needs-validation" (ngSubmit)="guardarActor()">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Nombre</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required
+                            formControlName="nombre">
+                        <small class="invalid"
+                            *ngIf="forma.controls['nombre'].errors?.['required'] && forma.controls['nombre'].touched">
+                            El nombre es requerido.
+                        </small>
+                        <small class="invalid"
+                            *ngIf="forma.controls['nombre'].errors?.['containsSpaces'] && forma.controls['nombre'].touched">
+                            El nombre no puede contener espacios
+                        </small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required
+                            formControlName="apellido">
+                        <small class="invalid"
+                            *ngIf="forma.controls['apellido'].errors?.['required'] && forma.controls['apellido'].touched">
+                            El apellido es requerido.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com" required
+                        formControlName="email">
+                    <small class="invalid"
+                        *ngIf="forma.controls['email'].errors?.['required'] && forma.controls['email'].touched">
+                        El email es requerido.
+                    </small>
+                    <small class="invalid" *ngIf="forma.controls['email'].errors?.['email'] &&
+                    forma.controls['email'].touched">
+                        El email no tiene el formato correcto
+                    </small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="edad">Edad</label>
+                    <input type="number" class="form-control" id="edad" required formControlName="edad">
+                    <small class="invalid" *ngIf="forma.controls['edad'].errors?.['required'] &&
+          forma.controls['edad'].touched">
+                        La edad es requerida.
+                    </small>
+                    <small class="invalid" *ngIf="forma.controls['edad'].errors?.['min'] || 
+          forma.controls['edad'].errors?.['max'] &&
+          forma.controls['edad'].touched">
+                        La edad debe ser de 18 a 99 años
+                    </small>
+                </div>
+
+                <div class="d-block my-3">
+                    <label for="sexo">Sexo</label>
+                    <div class="custom-control custom-radio">
+                        <input id="male" formControlName="sexo" name="sexo" type="radio" class="custom-control-input" value="Masculino" checked required>
+                        <label class="custom-control-label" for="male">Masculino</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="female" formControlName="sexo" name="sexo" type="radio" class="custom-control-input" value="Femenino" required>
+                        <label class="custom-control-label" for="female">Femenino</label>
+                    </div>
+                    <small class="invalid"
+                        *ngIf="forma.controls['sexo'].errors?.['required'] && forma.controls['sexo'].touched">
+                        El sexo es requerido.
+                    </small>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="pais">País</label>
+                        <div class="d-flex justify-content-between">
+                            <input type="text" class="form-control" id="pais" required formControlName="pais" [value]="paisSeleccionado != undefined ? paisSeleccionado.name.common : ''" readonly>
+                            <img class="ml-2" *ngIf="paisSeleccionado" [src]="paisSeleccionado != undefined ? paisSeleccionado.flags.svg : ''" [alt]="paisSeleccionado != undefined ? (paisSeleccionado.name.common + '-campo-bandera') : 'default-campo-bandera'" width="50">
+                        </div>
+                        <small class="invalid"
+                            *ngIf="forma.controls['pais'].errors?.['required'] && forma.controls['pais'].touched">
+                            El pais es requerido.
+                        </small>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit"
+                    [disabled]="forma.invalid">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022 Lucas Martin Mascheroni</p>
+    </footer>
+</div>
