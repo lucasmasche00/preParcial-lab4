@@ -9,9 +9,9 @@
     </div>
 
     <div class="row">
-        <!-- <div class="col-md-4 order-md-2 mb-4">
-            <app-tabla-paises (paisSeleccionadoEvent)="llenarCampoActor($event)"></app-tabla-paises>
-        </div> -->
+        <div class="col-md-4 order-md-2 mb-4">
+            <app-tabla-actor (actorSeleccionadoEvent)="llenarCampoActor($event)"></app-tabla-actor>
+        </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Película</h4>
             <form [formGroup]="forma" class="needs-validation" (ngSubmit)="guardarPelicula()">
@@ -105,7 +105,7 @@
                         <label for="actor">Actor</label>
                         <div class="d-flex justify-content-between">
                             <input type="text" class="form-control" id="actor" required formControlName="actor"
-                                [value]="actorSeleccionado != undefined ? actorSeleccionado.name.common : ''">
+                                [value]="actorSeleccionado != undefined ? actorSeleccionado.nombre + ' ' + actorSeleccionado.apellido : ''">
                         </div>
                         <small class="invalid"
                             *ngIf="forma.controls['actor'].errors?.['required'] && forma.controls['actor'].touched">
@@ -113,16 +113,22 @@
                         </small>
                     </div>
                 </div>
+                
+                <input type="hidden" id="actorHidden" required formControlName="actorHidden">
 
                 <div class="mb-3">
                     <label for="foto">Foto</label>
+                    <!-- <input type="file" class="form-control" id="foto" name="foto" formControlName="foto"
+                        accept="image/png, image/jpeg" (change)="handleInputChange($event)" required> -->
                     <input type="file" class="form-control" id="foto" name="foto" formControlName="foto"
-                        accept="image/png, image/jpeg" required>
+                        accept="image/png, image/jpeg" (change)="handleInputChange($event)" required>
                     <small class="invalid"
                         *ngIf="forma.controls['foto'].errors?.['required'] && forma.controls['foto'].touched">
                         La foto es requerida.
                     </small>
                 </div>
+
+                <input type="hidden" id="fotoHidden" required formControlName="fotoHidden">
 
                 <hr class="mb-4">
                 <button class="btn btn-primary btn-lg btn-block" type="submit"

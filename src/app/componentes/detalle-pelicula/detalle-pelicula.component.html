@@ -7,5 +7,6 @@
     <li>Público: {{ miPelicula.cantidadPublico }}</li>
     <li>Presupuesto: {{ miPelicula.costo }}</li>
     <li>Recaudación: {{ miPelicula.recaudacion }}</li>
+    <li>Actor: {{ miPelicula.actor.nombre != undefined && miPelicula.actor.apellido != undefined ? miPelicula.actor.nombre + ' ' + miPelicula.actor.apellido : 'Ninguno' }}</li>
 </ul>
 <p><a class="btn btn-secondary" href="#" role="button">Limpiar &raquo;</a></p>

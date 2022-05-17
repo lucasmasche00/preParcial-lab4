@@ -8,7 +8,7 @@ import { Pelicula } from 'src/app/entidades/pelicula';
 })
 export class DetallePeliculaComponent implements OnInit {
 
-  @Input() miPelicula: Pelicula = new Pelicula('','','','','','','','','');
+  @Input() miPelicula: Pelicula = {} as Pelicula;
 
   constructor() { }
 

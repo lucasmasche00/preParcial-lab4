@@ -22,12 +22,12 @@ export class TablaPaisesComponent implements OnInit {
   }
 
   public enviarPais(e: any, pais: any) {
-    let domPaises = e.target.parentNode.children;
-    if(e.target.nodeName == 'LI') { 
+    let domPaises = e.target.parentNode.parentNode.children;
+    if(e.target.parentNode.nodeName == 'LI') { 
       for (let index = 0; index < domPaises.length; index++) {
         domPaises[index].classList.remove('selected');    
       }
-      e.target.classList.add('selected');
+      e.target.parentNode.classList.add('selected');
       let paisJson = JSON.stringify(pais);
       this.paisSeleccionadoEvent.emit(paisJson);
     }

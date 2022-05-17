@@ -1,1 +1,13 @@
-<p>tabla-actor works!</p>
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Lista de actores</span>
+</h4>
+<ul class="list-group mb-3">
+    <li *ngFor="let actor of listaActores" class="list-group-item d-flex justify-content-between lh-condensed">
+        <img class="select-icon" src="../../../assets/img/select-icon.png" alt="select-icon" width="25" height="25" (click)="enviarActor($event, actor)">
+        <div class="text-center">
+            <h6 class="my-0">{{ actor.nombre + ' ' + actor.apellido }}</h6>
+        </div>
+        <img *ngIf="actor.sexo == 'Femenino'" src="../../../assets/img/female-icon.png" alt="female-icon" width="25" height="25">
+        <img *ngIf="actor.sexo == 'Masculino'" src="../../../assets/img/male-icon.png" alt="male-icon" width="25" height="25">
+    </li>
+</ul>

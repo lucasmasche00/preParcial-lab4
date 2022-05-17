@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Actor } from 'src/app/entidades/actor';
 import { DbContextService } from 'src/app/servicios/db-context.service';
 
 @Component({
@@ -48,7 +49,7 @@ export class ActorAltaComponent implements OnInit {
       return console.log("Ya existe un actor con ese mail");
     }
     else {
-      this.dbContextService.listadoActoresDB.push(this.forma.getRawValue());
+      this.dbContextService.listadoActoresDB.push(nuevoActor);
     }
   }
 }

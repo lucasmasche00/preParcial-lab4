@@ -1,3 +1,5 @@
+import { Actor } from "./actor";
+
 export class Pelicula {
     id: string;
     nombre: string;
@@ -8,8 +10,9 @@ export class Pelicula {
     descripcion: string;
     costo: string;
     recaudacion: string;
+    actor: Actor;
 
-    constructor(id: string, nombre: string, tipo: string, fecha: string, publico: string, foto: string, descripcion: string, costo: string, recaudacion: string) {
+    constructor(id: string, nombre: string, tipo: string, fecha: string, publico: string, foto: string, descripcion: string, costo: string, recaudacion: string, actor: Actor) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo
@@ -19,5 +22,6 @@ export class Pelicula {
         this.descripcion = descripcion;
         this.costo = costo;
         this.recaudacion = recaudacion;
+        this.actor = actor;
     }
 }
