@@ -64,6 +64,22 @@
                     </small>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="actor">Actor</label>
+                        <div class="d-flex justify-content-between">
+                            <input type="text" class="form-control" id="actor" required formControlName="actor"
+                                [value]="actorSeleccionado != undefined ? actorSeleccionado.nombre + ' ' + actorSeleccionado.apellido : ''" readonly>
+                        </div>
+                        <small class="invalid"
+                            *ngIf="forma.controls['actor'].errors?.['required'] && forma.controls['actor'].touched">
+                            El actor es requerido.
+                        </small>
+                    </div>
+                </div>
+                
+                <input type="hidden" id="actorHidden" required formControlName="actorHidden">
+                
                 <div class="mb-3">
                     <label for="publico">Público</label>
                     <input type="number" class="form-control" id="publico" required formControlName="publico">
@@ -99,22 +115,6 @@
                     <textarea name="descripcion" class="form-control" id="descripcion" formControlName="descripcion"
                         rows="10" cols="50"></textarea>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-5 mb-3">
-                        <label for="actor">Actor</label>
-                        <div class="d-flex justify-content-between">
-                            <input type="text" class="form-control" id="actor" required formControlName="actor"
-                                [value]="actorSeleccionado != undefined ? actorSeleccionado.nombre + ' ' + actorSeleccionado.apellido : ''">
-                        </div>
-                        <small class="invalid"
-                            *ngIf="forma.controls['actor'].errors?.['required'] && forma.controls['actor'].touched">
-                            El actor es requerido.
-                        </small>
-                    </div>
-                </div>
-                
-                <input type="hidden" id="actorHidden" required formControlName="actorHidden">
 
                 <div class="mb-3">
                     <label for="foto">Foto</label>
