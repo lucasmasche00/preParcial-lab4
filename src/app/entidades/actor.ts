@@ -1,12 +1,14 @@
+import { Pais } from "./pais";
+
 export class Actor {
     email: string;
     nombre: string;
     apellido: string;
     sexo: string;
     edad: number;
-    pais: string;
+    pais: Pais;
 
-    constructor(email: string, nombre: string, apellido: string, sexo: string, edad: number, pais: string) {
+    constructor(email: string, nombre: string, apellido: string, sexo: string, edad: number, pais: Pais) {
         this.email = email;
         this.nombre = nombre;
         this.apellido = apellido;

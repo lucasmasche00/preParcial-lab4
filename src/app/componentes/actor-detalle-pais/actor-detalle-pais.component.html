@@ -1,0 +1,17 @@
+<div *ngIf="miPais.nombre">
+    <h2>Detalle del país</h2>
+    <div class="text-center my-3">
+        <img [src]="miPais.fotoBandera" alt="foto-{{ miPais.nombre }}" width="100">
+    </div>
+    <ul>
+        <li>Nombre: {{ miPais.nombre }}</li>
+        <li>Población: {{ miPais.poblacion }}</li>
+        <li>Región: {{ miPais.region }}</li>
+        <li>Idiomas:
+            <span *ngFor="let idioma of miPais.idiomas">{{ miPais.idiomas.length > 1 ? miPais.idiomas[0] == idioma ?
+                idioma : ', ' + idioma
+                : idioma }}</span>
+        </li>
+    </ul>
+    <p><a class="btn btn-secondary" role="button" (click)="limpiarDetalle()">Limpiar &raquo;</a></p>
+</div>

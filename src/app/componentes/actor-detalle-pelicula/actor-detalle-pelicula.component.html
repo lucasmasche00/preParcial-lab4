@@ -1,0 +1,9 @@
+<div *ngIf="misPeliculas.length > 0">
+    <h2>Lista de peliculas</h2>
+    <ul *ngFor="let pelicula of misPeliculas" class="mb-2">
+        <li>Nombre: {{ pelicula.nombre }}</li>
+        <li>Tipo: {{ pelicula.tipo }}</li>
+        <li>Estreno: {{ pelicula.fechaEstreno }}</li>
+    </ul>
+    <p><a class="btn btn-secondary" role="button" (click)="limpiarDetalle()">Limpiar &raquo;</a></p>
+</div>

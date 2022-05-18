@@ -1,0 +1,12 @@
+<div *ngIf="miActor.email">
+    <h2>Detalles del actor</h2>
+    <ul>
+        <li>Email: {{ miActor.email }}</li>
+        <li>Nombre: {{ miActor.nombre }}</li>
+        <li>Apellido: {{ miActor.apellido }}</li>
+        <li>Sexo: {{ miActor.sexo }}</li>
+        <li>Edad: {{ miActor.edad }}</li>
+        <li>Pais: {{ miActor.pais.nombre }}</li>
+    </ul>
+    <p><a class="btn btn-secondary" role="button" (click)="limpiarDetalle()">Limpiar &raquo;</a></p>
+</div>

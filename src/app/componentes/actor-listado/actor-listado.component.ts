@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Actor } from 'src/app/entidades/actor';
 
 @Component({
   selector: 'app-actor-listado',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorListadoComponent implements OnInit {
 
+  @Input() listadoActores: Actor[] = [];
+  @Output() enviarActor = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  recibirYEnviarActor(jsonActor: string) {
+    this.enviarActor.emit(jsonActor);
+  }
 }

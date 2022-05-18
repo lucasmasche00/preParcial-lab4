@@ -1,0 +1,17 @@
+<table class="table">
+    <th>Email</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Sexo</th>
+    <tbody>
+        <tr *ngFor="let actor of listadoActoresTabla" (click)="enviarEmail(actor.email)">
+            <td>{{ actor.email }}</td>
+            <td>{{ actor.nombre }}</td>
+            <td>{{ actor.apellido }}</td>
+            <td>
+                <img *ngIf="actor.sexo == 'Femenino'" src="../../../assets/img/female-icon.png" alt="female-icon" width="25" height="25">
+                <img *ngIf="actor.sexo == 'Masculino'" src="../../../assets/img/male-icon.png" alt="male-icon" width="25" height="25">
+            </td>
+        </tr>
+    </tbody>
+</table>

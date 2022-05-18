@@ -17,7 +17,6 @@ export class TablaPaisesComponent implements OnInit {
     this.paisesService.traerTodos().subscribe(
       paises => {
         this.listaPaises = paises.splice(0, 8);
-        console.info(this.listaPaises);
       });
   }
 

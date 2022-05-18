@@ -1,1 +1,7 @@
-<p>actor-listado works!</p>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Listado de actores</h1>
+        <app-tabla-detalle-actor [listadoActoresTabla]="listadoActores" (enviarActorTabla)="recibirYEnviarActor($event)"></app-tabla-detalle-actor>
+    </div>
+</div>

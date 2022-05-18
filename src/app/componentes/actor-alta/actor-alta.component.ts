@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Actor } from 'src/app/entidades/actor';
+import { Pais } from 'src/app/entidades/pais';
 import { DbContextService } from 'src/app/servicios/db-context.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class ActorAltaComponent implements OnInit {
 
   public forma: FormGroup;
   public paisSeleccionado: any | undefined;
+  public mensajeDelForm: string = '';
 
   constructor(private fb: FormBuilder, private dbContextService: DbContextService) {
     this.forma = this.fb.group({ '': ['', [Validators.required]] });
@@ -25,6 +27,7 @@ export class ActorAltaComponent implements OnInit {
       'edad': ['', [Validators.required, Validators.min(18), Validators.max(99)]],
       'sexo': ['', [Validators.required]],
       'pais': ['', [Validators.required]],
+      'paisHidden': ['', []],
     });
   }
 
@@ -39,17 +42,22 @@ export class ActorAltaComponent implements OnInit {
   }
 
   public llenarCampoPais(paisSeleccionadoJson: any) {
-    this.paisSeleccionado = JSON.parse(paisSeleccionadoJson);
-    this.forma.controls['pais'].setValue(this.paisSeleccionado.name.common);
+    let paisObjAux = JSON.parse(paisSeleccionadoJson);
+    let arrayIdiomas = Object.values(paisObjAux.languages);
+    this.paisSeleccionado = new Pais(paisObjAux.name.common, paisObjAux.flags.svg, paisObjAux.population, paisObjAux.region, <string[]>arrayIdiomas);
+    this.forma.controls['pais'].setValue(this.paisSeleccionado.nombre);
+    this.forma.controls['paisHidden'].setValue(JSON.stringify(this.paisSeleccionado));
   }
 
   public guardarActor(): void {
-    let nuevoActor = this.forma.getRawValue();
-    if (this.dbContextService.listadoActoresDB.some(actor => actor.email == nuevoActor.email)) {
-      return console.log("Ya existe un actor con ese mail");
+    let nuevoActorAux = this.forma.getRawValue();
+    if (this.dbContextService.listadoActoresDB.some(actor => actor.email == nuevoActorAux.email)) {
+      this.mensajeDelForm = "Ya existe un actor con ese mail";
     }
     else {
+      let nuevoActor = new Actor(nuevoActorAux.email, nuevoActorAux.nombre, nuevoActorAux.apellido, nuevoActorAux.sexo, nuevoActorAux.edad, JSON.parse(nuevoActorAux.paisHidden));
       this.dbContextService.listadoActoresDB.push(nuevoActor);
+      this.mensajeDelForm = "Guardado exitoso!";
     }
   }
 }

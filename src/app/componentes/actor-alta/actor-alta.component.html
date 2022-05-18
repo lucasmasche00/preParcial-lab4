@@ -88,8 +88,8 @@
                     <div class="col-md-5 mb-3">
                         <label for="pais">País</label>
                         <div class="d-flex justify-content-between">
-                            <input type="text" class="form-control" id="pais" required formControlName="pais" [value]="paisSeleccionado != undefined ? paisSeleccionado.name.common : ''" readonly>
-                            <img class="ml-2" *ngIf="paisSeleccionado" [src]="paisSeleccionado != undefined ? paisSeleccionado.flags.svg : ''" [alt]="paisSeleccionado != undefined ? (paisSeleccionado.name.common + '-campo-bandera') : 'default-campo-bandera'" width="50">
+                            <input type="text" class="form-control" id="pais" required formControlName="pais" [value]="paisSeleccionado != undefined ? paisSeleccionado.nombre : ''" readonly>
+                            <img class="ml-2" *ngIf="paisSeleccionado" [src]="paisSeleccionado != undefined ? paisSeleccionado.fotoBandera : ''" [alt]="paisSeleccionado != undefined ? (paisSeleccionado.nombre + '-campo-bandera') : 'default-campo-bandera'" width="50">
                         </div>
                         <small class="invalid"
                             *ngIf="forma.controls['pais'].errors?.['required'] && forma.controls['pais'].touched">
@@ -97,6 +97,9 @@
                         </small>
                     </div>
                 </div>
+
+                <input type="hidden" formControlName="paisHidden" id="paisHidden">
+
                 <hr class="mb-4">
                 <button class="btn btn-primary btn-lg btn-block" type="submit"
                     [disabled]="forma.invalid">Guardar</button>
@@ -104,7 +107,11 @@
         </div>
     </div>
 
+    <div class="py-5 text-center">
+        <h4>{{ mensajeDelForm }}</h4>
+    </div>
+
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2022 Lucas Martin Mascheroni</p>
+        <p class="mb-1">&copy; 2022 Lucas Martín Mascheroni</p>
     </footer>
 </div>

@@ -14,6 +14,7 @@ export class PeliculaAltaComponent implements OnInit {
   public forma: FormGroup;
   public actorSeleccionado: any | undefined;
   private imageSrc: string = '';
+  public mensajeDelForm: string = '';
 
   constructor(private fb: FormBuilder, private dbContextService: DbContextService) {
     this.forma = this.fb.group({ '': ['', [Validators.required]] });
@@ -56,6 +57,7 @@ export class PeliculaAltaComponent implements OnInit {
     let actorAux = JSON.parse(pAux.actorHidden);
     let nuevaPelicula = new Pelicula(id.toString(), pAux.nombre, pAux.tipo, pAux.fechaEstreno, pAux.publico, pAux.fotoHidden, pAux.descripcion, pAux.costo, pAux.recaudacion, actorAux);
     this.dbContextService.listadoPeliculasDB.push(nuevaPelicula);
+    this.mensajeDelForm = "Guardado exitoso!";
   }
 
   public handleInputChange(e: any) {

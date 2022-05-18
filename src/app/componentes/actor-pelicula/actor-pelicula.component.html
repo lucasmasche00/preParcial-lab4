@@ -1,0 +1,27 @@
+<main role="main">
+
+    <app-actor-listado [listadoActores]="listadoActoresBase" (enviarActor)="recibirActorBase($event)"></app-actor-listado>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <app-actor-detalle-pelicula [misPeliculas]="misPeliculasDelActor"></app-actor-detalle-pelicula>
+            </div>
+            <div class="col-md-4">
+                <app-actor-detalle-pais [miPais]="miActorBase.pais" ></app-actor-detalle-pais>
+            </div>
+            <div class="col-md-4">
+                <app-detalle-actor [miActor]="miActorBase"></app-detalle-actor>
+            </div>
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p>&copy; 2022 Lucas Martín Mascheroni</p>
+</footer>

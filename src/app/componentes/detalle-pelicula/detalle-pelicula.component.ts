@@ -15,4 +15,7 @@ export class DetallePeliculaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public limpiarDetalle() {
+    this.miPelicula = {} as Pelicula;
+  }
 }

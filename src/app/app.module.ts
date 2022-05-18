@@ -17,6 +17,13 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
+import { PeliculaComponent } from './componentes/pelicula/pelicula.component';
+import { ActorComponent } from './componentes/actor/actor.component';
+import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { TablaDetalleActorComponent } from './componentes/tabla-detalle-actor/tabla-detalle-actor.component';
+import { ActorDetallePeliculaComponent } from './componentes/actor-detalle-pelicula/actor-detalle-pelicula.component';
+import { ActorDetallePaisComponent } from './componentes/actor-detalle-pais/actor-detalle-pais.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,14 @@ import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.compo
     DetallePeliculaComponent,
     TablaPaisesComponent,
     MenuComponent,
-    TablaActorComponent
+    TablaActorComponent,
+    PeliculaComponent,
+    ActorComponent,
+    ActorPeliculaComponent,
+    DetalleActorComponent,
+    TablaDetalleActorComponent,
+    ActorDetallePeliculaComponent,
+    ActorDetallePaisComponent
   ],
   imports: [
     FormsModule,
